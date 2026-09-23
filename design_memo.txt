@@ -1,0 +1,7 @@
+Design Memo
+
+For the undo and redo system, I used a stack because it works in a last in, first out order. This makes sense for undo because the most recent action should always be the first action that gets removed. For example, if I make three changes, I would want to undo the third change before going back to the first or second one. The redo stack works the same way by keeping track of the actions that were undone so they can be added back in the correct order.
+
+For the help desk system, a queue makes more sense because it works in a first in, first out order. The first customer who enters the line should normally be the first customer helped. When a new customer is added, they go to the rear of the queue. When someone is helped, they are removed from the front. This keeps the help desk line organized and fair.
+
+My stack and queue are also different from using Python's built-in lists. Instead of using list methods to handle everything, I created my own Node objects and connected them using pointers. The stack keeps track of the top node, while the queue keeps track of both the front and rear nodes. Building them this way helped me understand what is actually happening when something is added or removed instead of just calling a built-in Python method.
